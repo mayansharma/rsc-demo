@@ -1,29 +1,32 @@
 {
-    "name": "catalyst-rsc",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "catalyst start",
-        "build": "catalyst build",
-        "serve": "catalyst serve",
-        "lint": "eslint .",
-        "devBuild": "catalyst devBuild",
-        "devServe": "catalyst devServe"
-    },
-    "_moduleAliases": {
-        "@api": "api.js",
-        "@containers": "src/js/containers",
-        "@server": "server",
-        "@config": "config",
-        "@css": "src/static/css",
-        "@routes": "src/js/routes/"
-    },
-    "dependencies": {
-        "@tata1mg/router": "0.0.1-beta.3",
-        "catalyst-core": "0.0.2-canary.0"
-    },
-    "devDependencies": {
-        "eslint": "^8.26.0",
-        "eslint-plugin-react": "^7.34.1",
-        "eslint-plugin-react-hooks": "^4.6.0"
-    }
+  "name": "catalyst-rsc",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "catalyst start",
+    "build": "catalyst build",
+    "serve": "catalyst serve",
+    "lint": "eslint .",
+    "devBuild": "catalyst devBuild",
+    "devServe": "catalyst devServe"
+  },
+  "_moduleAliases": {
+    "@api": "api.js",
+    "@containers": "src/js/containers",
+    "@server": "server",
+    "@config": "config",
+    "@css": "src/static/css",
+    "@routes": "src/js/routes/"
+  },
+  "dependencies": {
+    "react": "0.0.0-experimental-06d0b89e-20240801",
+    "react-dom": "0.0.0-experimental-06d0b89e-20240801",
+    "@tata1mg/router": "0.0.1-beta.3",
+    "catalyst-core": "git+https://github.com/tata1mg/catalyst.git#canary-rsc",
+    "react-server-dom-webpack": "0.0.0-experimental-06d0b89e-20240801"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
 }

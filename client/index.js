@@ -1,18 +1,15 @@
-import React from "react"
-import "./styles"
-import { hydrateRoot } from "react-dom/client"
-import { RouterProvider } from "@tata1mg/router"
-import clientRouter from "catalyst-core/router/ClientRouter"
+import React, { use } from "react";
+import "./styles";
+import { hydrateRoot } from "react-dom/client";
+import { createFromFetch } from "react-server-dom-webpack/client";
 
-const { __ROUTER_INITIAL_DATA__: routerInitialData } = window
+window.process = {};
 
-const router = clientRouter({ routerInitialState: routerInitialData })
+const content = createFromFetch(fetch("/rsc"));
 
-const Application = (
-    <React.StrictMode>
-        <RouterProvider router={router} />
-    </React.StrictMode>
-)
+const Application = () => {
+  return use(content);
+};
 
-const container = document.getElementById("app")
-hydrateRoot(container, Application)
+const container = document.getElementById("app");
+hydrateRoot(container, <Application />);
