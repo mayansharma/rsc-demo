@@ -53,7 +53,7 @@ Explore the complete documentation at [https://catalyst.1mg.com](https://catalys
 
 ```
 
-2. While building our RSC server, we have added a plugin that checks if an import is a client component, and excludes it from bundling
+2. While building our RSC server, we have added a plugin that checks if an import is a client component, and excludes it from bundling (disabled in the current commit)
 
 ```
 class ExcludeClientComponent {
@@ -77,3 +77,10 @@ class ExcludeClientComponent {
     }
 }
 ```
+
+## Issues
+
+As the ExcludeClientComponent is disabled in the latest commit, the RSC server will try to render the client component and will throw an error
+`TypeError: (0 , r.useState) is not a function or its return value is not iterable`
+
+If we enable the ExcludeClientComponent plugin, the RSC server will not bundle the client components and instead refer to them through the `ssr-manifest.json` file, will work for basic components but if we import css in any client component, the `react-server-dom-webpack/plugin` stops emitting its chunk
