@@ -18,10 +18,12 @@
     "@routes": "src/js/routes/"
   },
   "dependencies": {
+    "@tata1mg/router": "0.0.1-beta.3",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "catalyst-core": "git+https://github.com/tata1mg/catalyst.git#canary-rsc-v1",
     "react": "0.0.0-experimental-06d0b89e-20240801",
     "react-dom": "0.0.0-experimental-06d0b89e-20240801",
-    "@tata1mg/router": "0.0.1-beta.3",
-    "catalyst-core": "git+https://github.com/tata1mg/catalyst.git#canary-rsc",
     "react-server-dom-webpack": "0.0.0-experimental-06d0b89e-20240801"
   },
   "devDependencies": {
